@@ -1,3 +1,149 @@
-body{
-    background-color: #66ccff;
+body {
+    background: #333;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.topbar {
+    width: 100%;
+    height: 60px;
+    background-color: #444;
+    color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 32px;
+    box-sizing: border-box;
+}
+
+.site-title {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.navbar {
+    display: flex;
+    gap: 28px;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.2s;
+}
+
+.navbar a:hover {
+    color: #ffd700;
+}
+
+
+.container {
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    margin-top: 60px;
+    background: none;
+
+    box-sizing: border-box;
+}
+
+.sidebar {
+    width: 28vw;
+    background-color: #3a3a3a;
+    color: #fff;
+    min-height: 100vh;
+    padding: 32px 24px 0 24px; /* 左右各加24px内边距 */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar-photo {
+    width: 15vw;
+    height: 15vw;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #fff;
+    margin-bottom: 24px;
+    border: 4px solid #888;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.sidebar-name {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.sidebar-info {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;           /* 水平居中 */
+    width: 100%;
+    max-width: 220px;         /* 最大宽度，可根据需要调整 */
+    text-align: left;         /* 内容左对齐 */
+}
+
+.sidebar-info li {
+    font-size: 16px;
+    margin: 10px 0 0 0; /* 去掉左侧margin */
+    color: #eee;
+}
+.sidebar-bio {
+    font-size: 15px;
+    margin-bottom: 18px;
+    text-align: center;
+    color: #ccc;
+}
+
+.sidebar-info a {
+    color: #ffd700;         /* 柔和的金色 */
+    text-decoration: none;  /* 去掉下划线 */
+    transition: color 0.2s;
+    font-weight: 500;
+}
+
+.sidebar-info a:hover {
+    color: #fff176;         /* 悬停时更亮 */
+    text-decoration: underline;
+}
+
+.main-content {
+    flex: 1;
+    padding: 48px 32px 48px 32px; /* 左右内边距缩小为32px */
+    color: #fff;
+}
+
+.main-content h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 18px;
+}
+
+.main-content h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: 36px;
+    margin-bottom: 12px;
+}
+
+.main-content p {
+    font-size: 20px;
+    line-height: 1.7;
+    margin-bottom: 18px;
 }

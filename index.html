@@ -1,75 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Name / Site Title</title>
-  <!-- Font Awesome for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-yH8nOXz6Dw7u6V2+l1c7a4GWOiEayORfC3yVjwBxgsJQpo7c0pYp9f3EXZ8yBS3H6f7h1yT1TXpwxT8vYlX4cw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <style>
-    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; display: flex; }
-    header { width: 100%; background: #fff; border-bottom: 1px solid #e1e4e8; padding: 0.5rem 1rem; position: fixed; top: 0; display: flex; align-items: center; z-index: 10; }
-    header .site-title { font-weight: 600; }
-    header nav { margin-left: 2rem; flex: 1; }
-    header nav a { margin: 0 1rem; text-decoration: none; color: #24292e; font-weight: 500; }
-    header .settings { margin-left: auto; color: #586069; cursor: pointer; }
-    .container { display: flex; margin-top: 3.5rem; width: 100%; }
-    .sidebar { width: 16rem; padding: 1.5rem; border-right: 1px solid #e1e4e8; }
-    .sidebar .avatar { width: 100%; text-align: center; margin-bottom: 1.5rem; }
-    .sidebar .avatar img { width: 80%; border-radius: 50%; }
-    .sidebar h2 { margin: 0.5rem 0; font-size: 1.25rem; }
-    .sidebar p.bio { font-size: 0.9rem; color: #586069; }
-    .sidebar ul { list-style: none; padding: 0; margin-top: 1rem; }
-    .sidebar ul li { margin: 0.75rem 0; font-size: 0.9rem; }
-    .sidebar ul li i { width: 1.25rem; text-align: center; }
-    .sidebar ul li a { margin-left: 0.5rem; color: #0366d6; text-decoration: none; }
-    .main { flex: 1; padding: 1.5rem; }
-    .main h1 { font-size: 1.75rem; margin-bottom: 1rem; }
-    .main h2 { font-size: 1.25rem; margin-top: 2rem; }
-    .main p { line-height: 1.6; margin-bottom: 1rem; }
-    .main a { color: #0366d6; }
-  </style>
+    <meta charset="UTF-8">
+    <title>你的站点标题</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <div class="site-title">Your Name / Site Title</div>
-    <nav>
-      <a href="#publications">Publications</a>
-      <a href="#talks">Talks</a>
-      <a href="#teaching">Teaching</a>
-      <a href="#portfolio">Portfolio</a>
-      <a href="#blog">Blog Posts</a>
-      <a href="#cv">CV</a>
-      <a href="#guide">Guide</a>
-    </nav>
-    <div class="settings"><i class="fas fa-cog"></i></div>
-  </header>
-  <div class="container">
-    <aside class="sidebar">
-      <div class="avatar">
-        <img src="https://via.placeholder.com/150" alt="Avatar">
-      </div>
-      <h2>Your Sidebar Name</h2>
-      <p class="bio">Short biography for the left-hand sidebar</p>
-      <ul>
-        <li><i class="fas fa-map-marker-alt"></i> Earth</li>
-        <li><i class="fas fa-university"></i> Red Brick University</li>
-        <li><i class="fas fa-envelope"></i> Email</li>
-        <li><i class="fas fa-graduation-cap"></i> <a href="#">Google Scholar</a></li>
-        <li><i class="fas fa-id-badge"></i> <a href="#">ORCID</a></li>
-        <li><i class="fas fa-book"></i> <a href="#">PubMed</a></li>
-        <li><i class="fab fa-github"></i> <a href="#">GitHub</a></li>
-        <li><i class="fab fa-bluetooth"></i> <a href="#">Bluesky</a></li>
-      </ul>
-    </aside>
-    <main class="main">
-      <h1>Academic Pages is a ready-to-fork GitHub Pages template for academic personal websites</h1>
-      <p>This is the front page of a website that is powered by the <a href="https://github.com/academicpages/academicpages">Academic Pages template</a> and hosted on GitHub pages. <a href="https://pages.github.com/">GitHub pages</a> is a free service in which websites are built and hosted from code and data stored in a GitHub repository, automatically updating when a new commit is made to the repository. This template was forked from the <a href="https://mmistakes.github.io/minimal-mistakes/">Minimal Mistakes Jekyll Theme</a> created by Michael Rose, and then extended to support the kinds of content that academics have: publications, talks, teaching, a portfolio, blog posts, and a dynamically-generated CV. You can fork <a href="#">this template</a> right now, modify the configuration and markdown files, add your own PDFs and other content, and have your own site for free, with no ads!</p>
+    <div class="topbar">
+        <div class="site-title">Lewis Zhang's Homepage</div>
+        <nav class="navbar">
+            <!-- <a href="#">Publications</a> -->
+            <!-- <a href="#">Talks</a> -->
+            <!-- <a href="#">Teaching</a> -->
+            <!-- <a href="#">Portfolio</a> -->
+            <!-- <a href="#">Blog Posts</a> -->
+            <a href="#">Projects</a>
+            <a href="#">CV</a>
+            <!-- <a href="#">Guide</a> -->
+        </nav>
+    </div>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="sidebar-photo">
+                <img src="your-photo.jpg" alt="个人照片">
+            </div>
+            <div class="sidebar-name">Lewis Zhang</div>
+            <div class="sidebar-bio">Undergraduate student at New York University. Majoring in Computer Science.</div>
+            <ul class="sidebar-info">
+                <li>🌍 New York / Shanghai</li>
+                <li>🏫 New York University</li>
+                <li>✉️ email: <a href="mailto:tz2668@nyu.edu">tz2668@nyu.edu</a></li>
+                <!-- <li>🔗 Google Scholar</li> -->
+                <!-- <li>🟢 ORCID</li> -->
+                <!-- <li>🔬 PubMed</li> -->
+                <li>🐙 GitHub: <a href="https://github.com/LewisZZZ-Zhang">LewisZZZ-Zhang</a></li>
+                <li>💬 LinkedIn: <a href="https://www.linkedin.com/in/tianluo-zhang-804442334/">Lewis Zhang</a>
+                <li>🎨 pixiv: <a href="https://www.pixiv.net/users/67640367">Lewis_洛</a></li>
 
-      <h2>A data-driven personal website</h2>
-      <p>Like many other Jekyll-based GitHub Pages templates, Academic Pages makes you separate the website’s content from its form. The content &amp; metadata of your website are in structured markdown files, while various other files constitute the theme, specifying how to transform that content &amp; metadata into HTML pages. You keep these various markdown (.md), YAML (.yml), HTML, and CSS files in a public GitHub repository. Each time you commit and push an update to the repository, the GitHub pages service creates static HTML pages based on these files, which are hosted on GitHub’s servers free of charge.</p>
-      <p>Many of the features of dynamic content management systems (like Wordpress) can be achieved in this fashion, using a fraction of the computational resources and with far less vulnerability to hacking and DDoSing. You can also modify the theme to your heart’s content without touching the content of your site. If you get to a point where you’ve broken something, you can revert to a previous commit or start over with a fresh fork.</p>
-    </main>
-  </div>
+                <!-- <li>🦋 Bluesky</li> -->
+
+            </ul>
+        </aside>
+        <main class="main-content">
+            <h1>Academic Pages is a ready-to-fork GitHub Pages template for academic personal websites</h1>
+            <p>
+                This is the front page of a website that is powered by the Academic Pages template and hosted on GitHub pages.
+                <!-- 这里可以继续添加内容 -->
+            </p>
+            <h2>A data-driven personal website</h2>
+            <p>
+                Like many other Jekyll-based GitHub Pages templates, Academic Pages makes you separate the website’s content from its form.
+                <!-- 这里可以继续添加内容 -->
+            </p>
+        </main>
+    </div>
 </body>
 </html>
