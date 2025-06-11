@@ -18,13 +18,21 @@ a:hover {
 
 /* 顶部栏 */
 .topbar {
+    position: relative;
+    z-index: 10;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-between; /* 左右分布 */
     background: #23272e;
     padding: 0 2rem;
     height: 60px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.13), 0 1.5px 4px rgba(0,0,0,0.10);
+}
+
+.topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
 .site-title {
@@ -72,25 +80,38 @@ a:hover {
     background: #23272e;
     border-radius: 12px;
     padding: 2rem 1.5rem;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 32px rgba(0,0,0,0.18), 0 1.5px 4px rgba(0,0,0,0.10);
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
+}
+
+.sidebar-photo {
+    position: absolute;
+    top: -90px; /* 头像高度一半 */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
 }
 
 .sidebar-photo img {
-    width: 110px;
-    height: 110px;
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
     object-fit: cover;
     border: 3px solid #4ea1f7;
-    margin-bottom: 1rem;
+    /* margin-bottom: 1rem;  移除原有 margin-bottom */
+    box-shadow: 0 4px 16px rgba(0,0,0,0.10);
 }
+
+
 
 .sidebar-name {
     font-size: 1.2rem;
     font-weight: bold;
     margin-bottom: 0.5rem;
+    margin-top: 100px;
 }
 
 .sidebar-bio {
@@ -167,6 +188,13 @@ body.light-mode .sidebar-photo img {
     border-color: #1e90ff;
 }
 
+body.light-mode .topbar,
+body.light-mode .sidebar,
+body.light-mode .main-content {
+    /* ...existing code... */
+    box-shadow: 0 4px 24px rgba(30,144,255,0.08), 0 1.5px 4px rgba(0,0,0,0.06);
+}
+
 /* 响应式 */
 @media (max-width: 900px) {
     .container {
@@ -203,4 +231,15 @@ body.light-mode .sidebar-photo img {
         align-items: center;
         padding: 1rem 0.5rem;
     }
+}
+
+
+.header-banner img {
+    width: 100%;
+    max-height: 260px;
+    object-fit: cover;
+    display: block;
+    border-radius: 0 0 0px 0px;
+    /* box-shadow: 0 2px 12px rgba(0,0,0,0.10); */
+    margin-bottom: 1.2rem;
 }

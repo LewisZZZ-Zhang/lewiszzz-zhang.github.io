@@ -2,24 +2,34 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>你的站点标题</title>
+    <title>Lewis Zhang NYU</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+
+<body class="light-mode">
+<!-- ...existing code... -->
     <div class="topbar">
         <div class="site-title">Lewis Zhang's Homepage</div>
-        <nav class="navbar">
-            <!-- <a href="#">Publications</a> -->
-            <!-- <a href="#">Talks</a> -->
-            <!-- <a href="#">Teaching</a> -->
-            <!-- <a href="#">Portfolio</a> -->
-            <!-- <a href="#">Blog Posts</a> -->
-            <a href="#">Projects</a>
-            <a href="#">CV</a>
-            <!-- <a href="#">Guide</a> -->
-        </nav>
-        <button id="theme-toggle" title="切换亮/暗模式">🌙</button>
+        <div class="topbar-right">
+            <nav class="navbar">
+                <!-- <a href="#">Publications</a> -->
+                <!-- <a href="#">Talks</a> -->
+                <!-- <a href="#">Teaching</a> -->
+                <!-- <a href="#">Portfolio</a> -->
+                <!-- <a href="#">Blog Posts</a> -->
+                <a href="#">Projects</a>
+                <a href="#">CV</a>
+                <!-- <a href="#">Guide</a> -->
+            </nav>
+            <button id="theme-toggle" title="切换亮/暗模式">🌌</button>
+        </div>
     </div>
+
+    <div class="header-banner">
+        <img src="assets/2.png" alt="头图" />
+    </div>
+
+<!-- ...existing code... -->
     <div class="container">
         <aside class="sidebar">
             <div class="sidebar-photo">
@@ -36,7 +46,7 @@
                 <!-- <li>🔬 PubMed</li> -->
                 <li>🐙 GitHub: <a href="https://github.com/LewisZZZ-Zhang">LewisZZZ-Zhang</a></li>
                 <li>💬 LinkedIn: <a href="https://www.linkedin.com/in/tianluo-zhang-804442334/">Lewis Zhang</a>
-                <li>🎨 pixiv: <a href="https://www.pixiv.net/users/67640367">Lewis_洛</a></li>
+                <li>🎨 Pixiv: <a href="https://www.pixiv.net/users/67640367">Lewis_洛</a></li>
 
                 <!-- <li>🦋 Bluesky</li> -->
 
@@ -58,10 +68,9 @@
 </body>
 </html>
 
-
 <script>
 document.getElementById('theme-toggle').onclick = function() {
     document.body.classList.toggle('light-mode');
-    this.textContent = document.body.classList.contains('light-mode') ? '🌞' : '🌙';
+    this.textContent = document.body.classList.contains('light-mode') ? '🌅' : '🌌';
 };
 </script>
