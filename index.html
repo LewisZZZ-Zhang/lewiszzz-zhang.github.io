@@ -18,11 +18,12 @@
             <a href="#">CV</a>
             <!-- <a href="#">Guide</a> -->
         </nav>
+        <button id="theme-toggle" title="切换亮/暗模式">🌙</button>
     </div>
     <div class="container">
         <aside class="sidebar">
             <div class="sidebar-photo">
-                <img src="your-photo.jpg" alt="个人照片">
+                <img src="assets/1.jpg" alt="个人照片">
             </div>
             <div class="sidebar-name">Lewis Zhang</div>
             <div class="sidebar-bio">Undergraduate student at New York University. Majoring in Computer Science.</div>
@@ -56,3 +57,11 @@
     </div>
 </body>
 </html>
+
+
+<script>
+document.getElementById('theme-toggle').onclick = function() {
+    document.body.classList.toggle('light-mode');
+    this.textContent = document.body.classList.contains('light-mode') ? '🌞' : '🌙';
+};
+</script>
