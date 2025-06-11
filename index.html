@@ -109,8 +109,14 @@
 </html>
 
 <script>
+function updateThemeIcon() {
+    document.getElementById('theme-toggle').textContent =
+        document.body.classList.contains('light-mode') ? '🌅' : '🌌';
+}
 document.getElementById('theme-toggle').onclick = function() {
     document.body.classList.toggle('light-mode');
-    this.textContent = document.body.classList.contains('light-mode') ? '🌅' : '🌌';
+    updateThemeIcon();
 };
+// 页面加载时同步一次
+updateThemeIcon();
 </script>
