@@ -3,7 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Lewis Zhang NYU</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Build_a_Gundam_shield</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- include p5 -->
+    <script src="lib/p5.js"></script>
+    <script src="lib/p5.sound.min.js"></script>
 </head>
 
 <body class="light-mode">
@@ -26,14 +31,14 @@
     </div>
 
     <div class="header-banner">
-        <img src="assets/2.jpg" alt="头图" />
+        <img src="assets/1.jpeg" alt="头图" />
     </div>
 
 <!-- ...existing code... -->
     <div class="container">
         <aside class="sidebar">
             <div class="sidebar-photo">
-                <img src="assets/1.jpeg" alt="个人照片">
+                <img src="assets/image.png" alt="个人照片">
             </div>
             <div class="sidebar-name">Lewis Zhang</div>
             <div class="sidebar-bio">Undergraduate student at New York University. Majoring in Computer Science.</div>
@@ -51,6 +56,7 @@
                 <!-- <li>🦋 Bluesky</li> -->
 
             </ul>
+            <div id="sketch-holder" style="margin-top: 2em;"></div>
         </aside>
 <!-- ...existing code... -->
         <main class="main-content">
@@ -106,6 +112,7 @@
         </main>
     </div>
 </body>
+<script src="sketch.js"></script>
 </html>
 
 <script>
