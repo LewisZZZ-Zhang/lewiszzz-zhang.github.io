@@ -50,14 +50,18 @@ a:hover {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    /* allow site title to grow and use available space */
+    flex: 1 1 auto;
+    min-width: 0;
+    color: inherit; /* ensure visible in both themes */
 }
 
 .topbar-right {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    min-width: 0;
-    flex-shrink: 1;
+    /* keep the right-side controls at their intrinsic width so title can expand */
+    flex: 0 0 auto;
 }
 
 .navbar {
@@ -94,7 +98,7 @@ a:hover {
     padding: 0 0.3em;
     box-shadow: none;
     flex-shrink: 0;
-    margin-left: 2rem;
+    margin-left: 0.5rem;
 }
 #theme-toggle:hover {
     color: #fff;
@@ -154,7 +158,7 @@ a:hover {
 .sidebar-role {
     font-size: 0.95rem;
     color: #e6eef8;
-    text-align: center;
+    text-align: left;
     margin-bottom: 1.1rem; /* 增加与下方列表的间距 */
 }
 
@@ -237,6 +241,11 @@ body.light-mode .sidebar-photo img {
     border-color: #1e90ff;
 }
 
+/* 亮色模式：侧边栏角色文本使用深色，避免在白色背景上不可见 */
+body.light-mode .sidebar-role {
+    color: #23272e;
+}
+
 body.light-mode .topbar,
 body.light-mode .sidebar,
 body.light-mode .main-content {
@@ -287,25 +296,41 @@ body.light-mode .main-content {
         gap: 0.5rem;
     }
     /* slightly larger topbar on mobile but still one row */
-    :root { --topbar-height: 72px; }
+    /* reduce reserved top space on mobile to bring header-banner closer to the top */
+    :root { --topbar-height: 48px; }
     .topbar-right {
         justify-content: flex-end;
-        width: 100%;
+        /* keep intrinsic width so title can use available space on small screens */
+        width: auto;
     }
 
     .site-title {
         font-size: 1.1rem;
     }
     .container {
-        padding: 0;
+        /* 给手机端留出左右间距，避免圆角容器紧贴屏幕边缘 */
+        padding: 0 1rem;
     }
     .main-content {
         padding: 1rem;
     }
     .sidebar {
+        /* 占满可用宽度并在左右留出内边距，避免内容贴屏 */
         flex-direction: column;
         align-items: center;
-        padding: 1rem 0.5rem;
+        padding: 1.5rem 1rem 1rem;
+        position: relative;
+        width: 100%;
+        box-sizing: border-box;
+        max-width: none;
+    }
+    /* 在移动端让头像绝对定位并向上偏移，部分覆盖头图（与桌面一致） */
+    .sidebar-photo {
+        position: absolute;
+        top: -60px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 2;
     }
     .sidebar-photo img {
         width: 120px;
@@ -316,10 +341,75 @@ body.light-mode .main-content {
         font-size: 0.9rem;
         line-height: 1.25;
         margin-bottom: 0.6rem;
-        text-align: center;
+        text-align: left;
+        width: 100%;
+    }
+    /* Ensure sidebar-body and name are full-width and left-aligned on mobile */
+    .sidebar-body {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0 0.5rem; /* 内边距让内容不紧贴左侧 */
+    }
+    .sidebar-name {
+        width: 100%;
+        text-align: left;
+        margin-top: 70px; /* 给出头像绝对定位后的顶部间距 */
     }
 }
 
+/* 平板专用：601px 到 900px — 头像左侧，文本区右侧垂直堆叠 */
+@media (min-width: 601px) and (max-width: 900px) {
+    .container {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .sidebar {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        padding: 1rem;
+        gap: 1.5rem;
+        position: relative;
+    }
+
+    .sidebar-photo {
+        position: static;
+        top: auto;
+        left: auto;
+        transform: none;
+        margin-right: 0.8rem;
+    }
+
+    .sidebar-photo img {
+        width: 180px;
+        height: 180px;
+        border-width: 4px;
+    }
+
+    .sidebar-body {
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+        align-items: flex-start;
+        width: calc(100% - 200px); /* 头像 180px + 间距 20px */
+    }
+
+    .sidebar-name,
+    .sidebar-role,
+    .sidebar-bio,
+    .sidebar-info {
+        width: 100%;
+        text-align: left;
+    }
+
+    .sidebar-info {
+        display: block;
+        margin-top: 0.2rem;
+    }
+}
 
 .header-banner img {
     width: 100%;
@@ -334,4 +424,12 @@ body.light-mode .main-content {
 .header-banner {
     overflow: hidden;
     background-color: #121416;
+}
+
+/* Reduce header-banner vertical height on small screens */
+@media (max-width: 600px) {
+    .header-banner img {
+        /* smaller but responsive on very short/tall phones */
+        height: clamp(120px, 22vh, 180px);
+    }
 }
