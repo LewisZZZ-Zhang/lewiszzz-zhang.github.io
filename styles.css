@@ -315,27 +315,32 @@ body.light-mode .main-content {
         padding: 1rem;
     }
     .sidebar {
-        /* 占满可用宽度并在左右留出内边距，避免内容贴屏 */
+        /* 占满可用宽度并在左右留出小内边距，避免内容贴屏 */
         flex-direction: column;
         align-items: center;
-        padding: 1.5rem 1rem 1rem;
+        padding: 1.5rem 0.75rem 1rem; /* reduce horizontal padding so centering is accurate */
         position: relative;
         width: 100%;
         box-sizing: border-box;
         max-width: none;
     }
-    /* 在移动端让头像绝对定位并向上偏移，部分覆盖头图（与桌面一致） */
+    /* 在移动端让头像绝对定位并向上偏移，部分覆盖头图（与桌面一致）
+       and ensure it's visually centered regardless of sidebar padding */
     .sidebar-photo {
         position: absolute;
         top: -60px;
         left: 50%;
+        right: auto;
         transform: translateX(-50%);
         z-index: 2;
+        margin-left: 0;
     }
     .sidebar-photo img {
         width: 120px;
         height: 120px;
         border-width: 3px;
+        display: block; /* avoid inline-image whitespace offsets */
+        margin: 0;
     }
     .sidebar-role {
         font-size: 0.9rem;
@@ -350,7 +355,8 @@ body.light-mode .main-content {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        padding: 0 0.5rem; /* 内边距让内容不紧贴左侧 */
+        /* 增加左侧内边距，让文本在移动端往右偏移一点，避免与头像重叠 */
+        padding: 0 0.5rem 0 5rem; /* top right bottom left — increased left padding */
     }
     .sidebar-name {
         width: 100%;
